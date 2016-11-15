@@ -11,6 +11,10 @@ import niu.user.NormalUser;
 import niu.user.SysUser;
 import niu.user.User;
 
+/**
+ * @author Tom
+ * 模拟业务场景
+ */
 public class PlatformTest {
 
 	public static void main(String[] args) {
