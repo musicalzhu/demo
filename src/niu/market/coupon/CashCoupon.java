@@ -1,7 +1,8 @@
-package niu.market; /**
+package niu.market.coupon; /**
  * 
  */
 
+import niu.market.coupon.Coupon;
 import niu.project.Project;
 
 

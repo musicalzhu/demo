@@ -1,7 +1,7 @@
-package niu.market; /***********************************************************************
- * Module:  niu.market.Coupon.java
+package niu.market.coupon; /***********************************************************************
+ * Module:  niu.market.coupon.Coupon.java
  * Author:  Tom
- * Purpose: Defines the Class niu.market.Coupon
+ * Purpose: Defines the Class niu.market.coupon.Coupon
  ***********************************************************************/
 
 import niu.contract.Contract;

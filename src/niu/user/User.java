@@ -8,8 +8,7 @@ import niu.common.DisplayFollow;
 import niu.common.Observer;
 import niu.common.Subject;
 import niu.contract.Contract;
-import niu.market.Coupon;
-import niu.market.Privilege;
+import niu.market.coupon.Coupon;
 import niu.market.grade.GoldGrade;
 import niu.market.grade.Grade;
 import niu.market.grade.PlatnumGrade;
@@ -17,7 +16,6 @@ import niu.market.grade.SiverGrade;
 import niu.platform.MOMApplyDocument;
 import niu.platform.Platform;
 import niu.project.Project;
-import niu.project.ProjectActivityType;
 
 
 /** @pdOid 57baf3cb-5b68-4f55-917a-758d98c53a63 */
@@ -116,7 +114,7 @@ public void setUserName(java.lang.String userName) {
    public java.util.Collection<Contract> contract;
    /** @pdRoleInfo migr=no name=niu.platform.MOMApplyDocument assc=ApplyMOM mult=0..1 */
    public MOMApplyDocument mOMApplyDocument;
-   /** @pdRoleInfo migr=no name=niu.market.Coupon assc=Association20 mult=0..* */
+   /** @pdRoleInfo migr=no name=niu.market.coupon.Coupon assc=Association20 mult=0..* */
    public java.util.Collection<Coupon> coupon;
    
    /** 获得用户拥有的合约
@@ -221,7 +219,7 @@ public void setUserName(java.lang.String userName) {
          if (this.contract.contains(oldContract))
          {
             this.contract.remove(oldContract);
-            oldContract.setUser((User)null);
+            oldContract.setUser(null);
          }
    }
    
@@ -234,7 +232,7 @@ public void setUserName(java.lang.String userName) {
          {
             oldContract = (Contract)iter.next();
             iter.remove();
-            oldContract.setUser((User)null);
+            oldContract.setUser(null);
          }
       }
    }
@@ -285,7 +283,7 @@ public void setUserName(java.lang.String userName) {
          if (this.coupon.contains(oldCoupon))
          {
             this.coupon.remove(oldCoupon);
-            oldCoupon.setUser((User)null);
+            oldCoupon.setUser(null);
          }
    }
    
@@ -298,7 +296,7 @@ public void setUserName(java.lang.String userName) {
          {
             oldCoupon = (Coupon)iter.next();
             iter.remove();
-            oldCoupon.setUser((User)null);
+            oldCoupon.setUser(null);
          }
       }
    }

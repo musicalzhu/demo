@@ -11,6 +11,6 @@ import java.util.*;
  * @pdOid 54be16b4-cd38-4b63-8bce-d289f21867ea */
 public enum SelfOwnedCapitalControl {
    lowestSelfOwnedCapitalPercent,
-   highestSelfOwnedCapitalPercent;
+   highestSelfOwnedCapitalPercent
 
 }

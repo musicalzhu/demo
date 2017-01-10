@@ -1,7 +1,7 @@
-import niu.market.CashCoupon;
-import niu.market.Coupon;
-import niu.market.grade.GoldGrade;
-import niu.market.grade.Grade;
+import niu.market.activity.FirstFollowActivity;
+import niu.market.activity.FirstProjectActivity;
+import niu.market.coupon.CashCoupon;
+import niu.market.coupon.Coupon;
 import niu.platform.Platform;
 import niu.platform.ProjectTradeCycle;
 import niu.product.ProductType;
@@ -46,7 +46,7 @@ public class PlatformTest {
 		userB.follow(momA);
 
 		//操盘手发布项目，申请募集资金
-		Project project01= momA.applyProject(
+		Project project01 = momA.applyProject(
 				ProductType.robust,
 				"牛菲特1号", 
 				10,
@@ -56,8 +56,16 @@ public class PlatformTest {
 				0.5, 
 				"牛刀小试");
 
+        //用户新手活动
+        FirstProjectActivity firstProjectActivity = new FirstProjectActivity(momA, project01);
+        firstProjectActivity.execute();
+
 		//用户关注操盘手的某个项目
 		userC.follow(project01);
+
+        //用户新手活动
+        FirstFollowActivity firstFollowActivity = new FirstFollowActivity(userC,project01);
+        firstFollowActivity.execute();
 
 		//项目审核通过后，可以开始在平台上募集资金
 		project01.audit();

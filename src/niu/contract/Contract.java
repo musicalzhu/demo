@@ -6,7 +6,7 @@ package niu.contract; /*********************************************************
 
 import niu.project.Project;
 import niu.user.User;
-import niu.market.Coupon;
+import niu.market.coupon.Coupon;
 import java.math.MathContext;
 
 /** 合约
@@ -118,7 +118,7 @@ public void setContractSubscribeAmount(
    }
    
    
-   /** @pdRoleInfo migr=no name=niu.market.Coupon assc=Association25 coll=java.util.Collection impl=java.util.HashSet mult=0..* */
+   /** @pdRoleInfo migr=no name=niu.market.coupon.Coupon assc=Association25 coll=java.util.Collection impl=java.util.HashSet mult=0..* */
    public java.util.Collection<Coupon> coupon;
    /** @pdRoleInfo migr=no name=niu.user.User assc=用户合约 mult=0..1 side=A */
    public User user;
@@ -169,7 +169,7 @@ public void setContractSubscribeAmount(
          if (this.coupon.contains(oldCoupon))
          {
             this.coupon.remove(oldCoupon);
-            oldCoupon.setContract((Contract)null);
+            oldCoupon.setContract(null);
          }
    }
    
@@ -182,7 +182,7 @@ public void setContractSubscribeAmount(
          {
             oldCoupon = (Coupon)iter.next();
             iter.remove();
-            oldCoupon.setContract((Contract)null);
+            oldCoupon.setContract(null);
          }
       }
    }

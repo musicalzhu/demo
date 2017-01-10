@@ -11,6 +11,6 @@ import java.util.*;
  * @pdOid fd713daa-d2cf-4d3a-8113-caca3f171108 */
 public enum ProjectTradeCycle {
    t10,
-   t20;
+   t20
 
 }

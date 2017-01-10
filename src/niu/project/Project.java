@@ -18,6 +18,7 @@ import niu.user.User;
 import java.math.MathContext;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -66,7 +67,7 @@ public class Project implements Subject {
 		observers = new ArrayList<Observer>();
 	}
    
-    private ArrayList<Observer> observers;
+    private List<Observer> observers;
    
 	public void registerObserver(Observer o) {
 		observers.add(o);
@@ -219,9 +220,6 @@ public class Project implements Subject {
     * @pdOid f86dc63a-c349-4523-bef0-4a1a0cc660aa */
    private java.util.Date projectInvestmentStopDate;
 
-   /** 项目满标日期：达到项目成立条件的日期。
-    * 
-    * @pdOid 551f4069-ca79-4c13-8bf3-5a29df71ef8d */
    private java.util.Date projectFullingDate;
 
    /** 操盘开始日期：项目满标后的下一个交易日。
@@ -230,7 +228,7 @@ public class Project implements Subject {
    private java.util.Date tradeBeginDate;
 
    /** 操盘结束日期：操盘开始后的第n个交易日，n=项目预设周期。
-    * 
+    *
     * @pdOid 60e0764e-2538-45f5-a7fb-b00448977d86 */
    private java.util.Date tradeEndDate;
 
@@ -424,7 +422,7 @@ public class Project implements Subject {
          if (this.myContracts.contains(oldContract))
          {
             this.myContracts.remove(oldContract);
-            oldContract.setProject((Project)null);
+            oldContract.setProject(null);
          }
    }
    
@@ -437,7 +435,7 @@ public class Project implements Subject {
          {
             oldContract = (Contract)iter.next();
             iter.remove();
-            oldContract.setProject((Project)null);
+            oldContract.setProject(null);
          }
       }
    }
@@ -541,5 +539,16 @@ public class Project implements Subject {
 		result.append("Status is " + state + "\n");
 		return result.toString();
 	}
+
+    /** 项目满标日期：达到项目成立条件的日期。
+     *
+     * @pdOid 551f4069-ca79-4c13-8bf3-5a29df71ef8d */
+    public java.util.Date getProjectFullingDate() {
+        return projectFullingDate;
+    }
+
+    public void setProjectFullingDate(java.util.Date projectFullingDate) {
+        this.projectFullingDate = projectFullingDate;
+    }
 }
 

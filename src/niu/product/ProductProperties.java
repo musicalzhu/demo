@@ -15,6 +15,6 @@ public enum ProductProperties {
    /** 项目下限金额 */
    projectFloorAmount,
    /** 产品上限金额 */
-   productCeilingAmount;
+   productCeilingAmount
 
 }

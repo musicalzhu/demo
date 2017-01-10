@@ -150,7 +150,7 @@ public void setmOMName(java.lang.String mOMName) {
          if (this.myProjects.contains(oldProject))
          {
             this.myProjects.remove(oldProject);
-            oldProject.setMOM((Mom)null);
+            oldProject.setMOM(null);
          }
    }
    
@@ -163,7 +163,7 @@ public void setmOMName(java.lang.String mOMName) {
          {
             oldProject = (Project)iter.next();
             iter.remove();
-            oldProject.setMOM((Mom)null);
+            oldProject.setMOM(null);
          }
       }
    }
